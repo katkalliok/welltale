@@ -1,0 +1,25 @@
+<%- include('./partials/header.ejs') %>
+<h2>Reporting</h2>
+
+<%- include('./partials/errors.ejs') %>
+
+<h3>Morning report</h3>
+<form method="POST" action='/behavior/reporting/morning'>
+    <label>Reporting date</label>
+    <input type="date"
+        name="date"
+        value="<%= today %>"
+        max="2020-12-31"/>
+    <label>Sleep hours (0.0-24.0)</label>
+    <input type='number' name='sleephours' step='0.5' max='24' value="<%= sleephours %>" required/>
+    <label>Sleep quality from 1 (very poor) to 5 (excellent)</label>
+    <input type='range' name='sleepquality' min='1' max='5' step='1' value="<%= sleepquality %>" class="slider" oninput="this.nextElementSibling.value = this.value" required>
+    <output><% sleepquality %></output>
+    <label>Generic mood from 1 (very poor) to 5 (excellent)</label>
+    <input type='range' name='morningmood' min='1' max='5' step='1' value="<%= morningmood %>" class="slider" oninput="this.nextElementSibling.value = this.value" required>
+    <output><% morningmood %></output>
+    <p>
+        <input type='submit' name='submit' value='Save'/>
+    </p>
+</form>
+<%- include('./partials/footer.ejs') %>

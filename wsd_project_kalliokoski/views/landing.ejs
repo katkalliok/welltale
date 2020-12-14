@@ -1,0 +1,35 @@
+<%- include('./partials/header') %>
+<h2>Welcome!</h2>
+
+<p>WellTale's purpose is to help you keep track of your daily life.
+Report your night's sleep in the morning and look back on your
+eating habits and the amount of time you've used on sports and
+studying in the evening. You can also report your overall mood
+both in the morning and the evening.
+</p>
+
+<% if (today) { %>
+    <p>Today's average mood is <%= today %>.</p>
+<% } %>
+<% if (yesterday) { %>
+    <p>Yesterday's average mood was <%= yesterday %>.</p>
+<% } %>
+<% if (better) { %>
+    <p>Things are looking bright today :-)</p>
+<% } %>
+<% if (today && yesterday && !better) { %>
+    <p>Things are looking gloomy today :-(</p>
+<% } %>
+
+
+
+
+<p><a href="/auth/registration">Create an user account!</a></p>
+
+<p><a href="/auth/login">Log in with e-mail</a></p>
+
+<p><a href="/behavior/reporting">Report your daily stats here!</a></p>
+
+
+
+<%- include('./partials/footer') %>

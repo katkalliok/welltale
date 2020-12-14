@@ -1,0 +1,28 @@
+<%- include('./partials/header.ejs') %>
+<h2>Reporting</h2>
+
+<%- include('./partials/errors.ejs') %>
+
+<h3>Evening report</h3>
+<form method='POST' action='/behavior/reporting/evening'>
+    <label>Reporting date</label>
+    <input type="date" name="date"
+       value=<%= today %>
+       max="2020-12-31"/>
+    <label>Sports and exercise hours (0.00-24.00)</label>
+    <input type='number' name='sportshours' min='0' max='24' step='0.5' value='<%= sportshours %>' required/>
+    <label>Studying hours (0.00-24.00)</label>
+    <input type='number' name='studyhours' min='0' max='24' step='0.5' value='<%= studyhours %>' required/>
+    <label>Eating regularity and quality from 1 (very poor) to 5 (excellent)</label>
+    <input type='range' name='eating' min='1' max='5' step='1' value="<%= eating %>" class="slider" oninput="this.nextElementSibling.value = this.value" required>
+    <output>1</output>
+    <label>Generic mood from 1 (very poor) to 5 (excellent)</label>
+    <input type='range' name='eveningmood' min='1' max='5' step='1' value="<%= eveningmood %>" class="slider" oninput="this.nextElementSibling.value = this.value" required>
+    <output>1</output>
+    <p>
+        <input type='submit' value='Save'/>
+    </p>
+</form>
+
+
+<%- include('./partials/footer.ejs') %>

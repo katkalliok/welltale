@@ -1,0 +1,14 @@
+<%- include('./partials/header.ejs') %>
+<h2>Reporting</h2>
+
+<form method='POST' action='/behavior/reporting/proceed/morning'>
+    <label>You have <%= morstatus %> reported your morning stats for today.</label>
+    <input type='submit' name='submit' value='Report morning stats!'/>
+</form>
+
+<form method='POST' action='/behavior/reporting/proceed/evening'>
+    <label>You have <%= evestatus %> reported your evening stats for today.</label>
+    <input type='submit' name='submit' value='Report evening stats!'/>
+</form>
+
+<%- include('./partials/footer.ejs') %>

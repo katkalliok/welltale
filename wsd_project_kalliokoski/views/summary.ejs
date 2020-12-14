@@ -1,0 +1,97 @@
+<%- include('./partials/header') %>
+<h2>Summary</h2>
+
+<h3>Weekly averages</h3>
+
+<form method='POST' action='/behavior/summary/week'> 
+    <label>Choose week:</label>
+    <input type='week' name='week' value="<%= week %>"/>
+    <input type='submit' name='submit' value='Count'/>
+</form>
+
+<% if (waverages && waverages.length > 0) { %>
+<table>
+    <tr>
+        <td>
+            Average sleep duration
+        </td>
+        <td>
+            Average time spent of sports and exercise
+        </td>
+        <td>
+            Average time spent studying
+        </td>
+        <td>
+            Average sleep quality
+        </td>
+        <td>
+            Average generic mood
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <%= waverages.avesleephours %>
+        </td>
+        <td>
+            <%= waverages.avesports %>
+        </td>
+        <td>
+            <%= waverages.avestudy %>
+        </td>
+        <td>
+            <%= waverages.avesleepquality %>
+        </td>
+        <td>
+            <%= waverages.avemood %>
+        </td>
+    </tr>
+</table>
+<% } %>
+
+
+<h3>Month's averages</h3>
+<form method='POST' action='/behavior/summary'>
+    <input type='month' name='month' value="<%= month %>"/>
+    <input type='submit' name='submit' value='Count'/>
+</form>
+
+<% if (maverages && maverages.length > 0) { %>
+<table>
+    <tr>
+        <td>
+            Average sleep duration
+        </td>
+        <td>
+            Average time spent of sports and exercise
+        </td>
+        <td>
+            Average time spent studying
+        </td>
+        <td>
+            Average sleep quality
+        </td>
+        <td>
+            Average generic mood
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <%= maverages.avesleephours %>
+        </td>
+        <td>
+            <%= maverages.avesports %>
+        </td>
+        <td>
+            <%= maverages.avestudy %>
+        </td>
+        <td>
+            <%= maverages.avesleepquality %>
+        </td>
+        <td>
+            <%= maverages.avemood %>
+        </td>
+    </tr>
+</table>
+<% } %>
+
+<%- include('./partials/footer.ejs') %>

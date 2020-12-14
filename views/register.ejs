@@ -1,0 +1,13 @@
+<%- include('./partials/header.ejs') %>
+<h2>Registration</h2>
+<%- include ('./partials/errors.ejs') %>  
+<form method="POST" action='/auth/registration'>
+    <label>Enter a valid email address</label>
+    <input type="email" name="email" value="<%= email %>"/>
+    <label>Enter a password of at least four (4) characters</label>
+    <input type="password" name="password" />
+    <label>Verify password</label>
+    <input type="password" name="verification" />
+    <input type="submit" value="Submit!" />
+</form>
+<%- include('./partials/footer.ejs') %>

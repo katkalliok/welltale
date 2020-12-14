@@ -1,0 +1,17 @@
+<%- include('./partials/header.ejs') %>
+
+<h2>Please register:</h2>
+<form method='POST' action='/auth/registration'>
+    <input type='email' name='email' />
+    <input type='password' name='password' />
+    <input type='password' name='confirmpassword' />
+    <input type='submit' name='Register' />
+</form>
+
+<h2>Please log in:</h2>
+<form method='POST' action='/auth/login'>
+    <input type='email' name='email' />
+    <input type='password' name='password' />
+    <input type='submit' name='Log in' />
+</form>
+<%- include('./partials/footer.ejs') %>

@@ -1,0 +1,13 @@
+<%- include('./partials/header.ejs') %>
+<h2>Log in to WellTale</h2>
+<%- include ('./partials/errors.ejs') %>    
+<form method="POST" action='/auth/login'>
+    <label>Enter your user email</label>
+    <input type="email" name="email" value=''/>
+    <label>Enter the password</label>
+    <input type="password" name="password" value='' />
+    <input type="submit" value="Log in!" />
+</form>
+
+<p><a href="http://localhost:7777/auth/registration">Create an account</a></p>
+<%- include('./partials/footer.ejs') %>
