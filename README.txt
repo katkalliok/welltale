@@ -1,4 +1,5 @@
-WELLTALE
+WELLTALE is a JavaScript Deno / HTML app for reporting and tracking of everyday lifestyle acitivities such as sleep, sports, and studying.
+Initial code created in 2020.
 
 DATABASES:
 
